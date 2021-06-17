@@ -13,8 +13,8 @@
     },
     "marvin-prod": {
       "hosting": {
-        "thegoodcrew": [
-          "thegoodcrew"
+        "thegoodcrew-live": [
+          "thegoodcrew-live"
         ]
       }
     }
