@@ -1,0 +1,87 @@
+version: 2.1
+orbs:
+  slack: circleci/slack@4.4.2
+
+commands:
+  install:
+    steps:
+      - run:
+          name: Install firebase CLI
+          command: yarn global add firebase-tools
+      - run:
+          name: Install Dependencies
+          command: yarn install
+  build:
+      steps:
+        - run:
+            name: Build Web Application
+            command: yarn build
+  deploy:
+    steps:
+      - run:
+          name: Deploy to Cloud Functions
+          command: yarn deploy -P $GCP_PROJECT_ID --token $FIREBASE_TOKEN
+
+# jobs used by workflows
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - install
+      - build
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+  build_and_deploy:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - install
+      - build
+      - deploy
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_and_test:
+          context: slack
+          filters:
+            branches:
+              ignore:
+                - main
+  deploy:
+    jobs:
+      - build_and_deploy:
+          name: stage_build_and_deploy
+          context: 
+            - gcp-marvin-stage
+            - slack
+          filters:
+            branches:
+              only:
+                - main
+      - slack/on-hold:
+          context: slack
+          requires:
+            - stage_build_and_deploy
+      - request_approval:
+          type: approval
+          requires:
+            - stage_build_and_deploy
+            - slack/on-hold
+      - build_and_deploy:
+          name: prod_build_and_deploy
+          context:
+            - gcp-marvin-prod
+            - slack
+          requires:
+            - request_approval
