@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LeftContentSection = styled("section")`
   position: relative;
-  padding: 10rem 0 8rem;
+  padding: 1rem 0 8rem;
 
   @media only screen and (max-width: 1024px) {
     padding: 4rem 0 4rem;
@@ -10,7 +10,7 @@ export const LeftContentSection = styled("section")`
 `;
 
 export const Content = styled("p")`
-  margin: 1.5rem 0 2rem 0;
+  margin: 0.1rem 0 2rem 0;
 `;
 
 export const ContentWrapper = styled("div")`

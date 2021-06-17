@@ -19,19 +19,19 @@ const RightBlock = ({
   t,
   id,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+  // const scrollTo = (id: string) => {
+  //   const element = document.getElementById(id) as HTMLDivElement;
+  //   element.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  // };
   return (
     <RightBlockContainer>
       <Fade direction="right">
         <Row justify="space-between" align="middle" id={id}>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <h6>{t(title)}</h6>
+              <h6 style={{marginBottom: "0.1rem"}}>{t(title)}</h6>
               <Content>{t(content)}</Content>
               <ButtonWrapper>
                 {typeof button === "object" &&
@@ -41,7 +41,7 @@ const RightBlock = ({
                         key={id}
                         color={item.color}
                         fixedWidth={true}
-                        onClick={() => scrollTo("about")}
+                        onClick={() => window.location.href = item.href}
                       >
                         {t(item.title)}
                       </Button>

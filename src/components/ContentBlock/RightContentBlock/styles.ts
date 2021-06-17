@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RightBlockContainer = styled("section")`
   position: relative;
-  padding: 10rem 0 8rem;
+  padding: 1rem 0 8rem;
 
   @media only screen and (max-width: 1024px) {
     padding: 8rem 0 6rem;
@@ -14,7 +14,7 @@ export const RightBlockContainer = styled("section")`
 `;
 
 export const Content = styled("p")`
-  margin: 1.5rem 0 2rem 0;
+  margin: 0.2rem 0 2rem 0;
 `;
 
 export const ContentWrapper = styled("div")`
@@ -36,6 +36,6 @@ export const ButtonWrapper = styled("div")`
   }
 
   button:last-child {
-    margin-left: 20px;
+    // margin-left: 20px;
   }
 `;

@@ -1,53 +1,51 @@
-import { Row, Col } from "antd";
+import { Row } from "antd";
 import { withTranslation } from "react-i18next";
-import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
 
-import i18n from "i18next";
 import {
-  FooterSection,
-  Title,
-  NavLink,
+  // FooterSection,
+  // Title,
+  // NavLink,
   Extra,
-  LogoContainer,
-  Para,
-  Large,
-  Chat,
-  Empty,
-  FooterContainer,
-  Language,
-  Label,
-  LanguageSwitch,
-  LanguageSwitchContainer,
+  // LogoContainer,
+  // Para,
+  // Large,
+  // Chat,
+  // Empty,
+  // FooterContainer,
+  // Language,
+  // Label,
+  // LanguageSwitch,
+  // LanguageSwitchContainer,
 } from "./styles";
 
-interface SocialLinkProps {
-  href: string;
-  src: string;
-}
+// interface SocialLinkProps {
+//   href: string;
+//   src: string;
+// }
 
 const Footer = ({ t }: any) => {
-  const handleChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+  // const handleChange = (language: string) => {
+  //   i18n.changeLanguage(language);
+  // };
 
-  const SocialLink = ({ href, src }: SocialLinkProps) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        key={src}
-        aria-label={src}
-      >
-        <SvgIcon src={src} width="25px" height="25px" />
-      </a>
-    );
-  };
+  // const SocialLink = ({ href, src }: SocialLinkProps) => {
+  //   return (
+  //     <a
+  //       href={href}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //       key={src}
+  //       aria-label={src}
+  //     >
+  //       <SvgIcon src={src} width="25px" height="25px" />
+  //     </a>
+  //   );
+  // };
 
   return (
     <>
-      <FooterSection>
+      {/* <FooterSection>
         <Container>
           <Row justify="space-between">
             <Col lg={10} md={10} sm={12} xs={12}>
@@ -125,25 +123,19 @@ const Footer = ({ t }: any) => {
             </Col>
           </Row>
         </Container>
-      </FooterSection>
+      </FooterSection> */}
       <Extra>
-        <Container border={true}>
+        <Container border={false}>
           <Row
             justify="space-between"
             align="middle"
             style={{ paddingTop: "3rem" }}
           >
-            <NavLink to="/">
-              <LogoContainer>
-                <SvgIcon
-                  src="logo.svg"
-                  aria-label="homepage"
-                  width="101px"
-                  height="64px"
-                />
-              </LogoContainer>
-            </NavLink>
-            <FooterContainer>
+            <div>
+              <p style={{fontFamily:"Motiva Sans Bold, sans-serif", fontSize:"20px", fontWeight:"bold", color: "18216d"}}>The Good Crew</p>
+              <p style={{fontSize:"16px"}}>Copyright &#169; 2021 The Good Crew LLC, All rights reserved</p>
+            </div>
+            {/* <FooterContainer>
               <SocialLink
                 href="https://github.com/Adrinlol/create-react-app-adrinlol"
                 src="github.svg"
@@ -160,13 +152,7 @@ const Footer = ({ t }: any) => {
                 href="https://medium.com/@lashakakabadze/"
                 src="medium.svg"
               />
-              <a href="https://www.buymeacoffee.com/adrinlol">
-                <img
-                  src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza&emoji=🍕&slug=adrinlol&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"
-                  alt="Buy me a pizza"
-                />
-              </a>
-            </FooterContainer>
+            </FooterContainer> */}
           </Row>
         </Container>
       </Extra>
