@@ -37,6 +37,10 @@ export const Extra = styled("section")`
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 2rem;
+
+  @media screen and (max-width: 414px) {
+    position: relative;
+  }
 `;
 
 export const LogoContainer = styled("div")`
