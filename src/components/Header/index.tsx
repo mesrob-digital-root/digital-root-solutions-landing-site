@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import Container from "../../common/Container";
 import {
   HeaderSection,
+  ImageContainer,
   LogoContainer,
 } from "./styles";
 
@@ -54,7 +55,7 @@ const Header = ({ t }: any) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <p style={{fontFamily:"Motiva Sans Bold, sans-serif", fontSize:"43px", fontWeight:"bold", color: "18216d"}}>TGC</p>
+            <ImageContainer alt="logo" className="logo" src="/img/logo.png"></ImageContainer>
           </LogoContainer>
           {/* <NotHidden>
             <MenuItem />

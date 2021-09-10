@@ -15,6 +15,10 @@ export const LogoContainer = styled(Link)`
   display: flex;
 `;
 
+export const ImageContainer = styled("img")`
+  height: 70px;
+`;
+
 export const NavLink = styled("div")`
   display: inline-block;
   text-align: center;
