@@ -132,8 +132,8 @@ const Footer = ({ t }: any) => {
             style={{ paddingTop: "3rem" }}
           >
             <div>
-              <p style={{fontFamily:"Motiva Sans Bold, sans-serif", fontSize:"20px", fontWeight:"bold", color: "18216d"}}>The Good Crew</p>
-              <p style={{fontSize:"16px"}}>Copyright &#169; 2021 The Good Crew LLC, All rights reserved</p>
+              <p style={{fontFamily:"Motiva Sans Bold, sans-serif", fontSize:"20px", fontWeight:"bold", color: "18216d"}}>Digital Root Solutions</p>
+              <p style={{fontSize:"16px"}}>Copyright &#169; 2021 Digital Root Solutions LLC, All rights reserved</p>
             </div>
             {/* <FooterContainer>
               <SocialLink
