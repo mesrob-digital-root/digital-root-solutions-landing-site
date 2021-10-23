@@ -1,22 +1,5 @@
 {
   "projects": {
-    "default": "marvin-stage",
-    "prod": "marvin-prod"
-  },
-  "targets": {
-    "marvin-stage": {
-      "hosting": {
-        "thegoodcrew": [
-          "thegoodcrew"
-        ]
-      }
-    },
-    "marvin-prod": {
-      "hosting": {
-        "thegoodcrew-live": [
-          "thegoodcrew-live"
-        ]
-      }
-    }
+    "default": "digitalrootsolutions-3ca49"
   }
 }
